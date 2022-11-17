@@ -1,0 +1,101 @@
+############################################
+yarn add express
+yarn add @types/express -D
+yarn add typesscript -D
+yarn add @types/typescript -D
+yarn add uuid
+yarn add @types/uuid -D
+
+##############################################################
+
+MULTER - FAZER UPLOAD DE ARQUIVO 
+
+CSV PARSE - FAZ LEITURA DA PLANILHA
+E ESCOLHER COMO PARSE  o csv para fazer o importe
+yarn add multer
+yarn add @types/multer -D
+yarn add csv-parse
+yarn add @types/multer-s3
+
+##########################################
+
+DESCRITIVO DO NESCESSITA INSTALAR SWAGGER
+
+yarn add swagger-ui-express
+yarn add @types/swagger-ui-express
+ir no tsconfig.json -> "resolveJsonModule": true;
+
+###############################
+DOCKER
+
+docker build -t rentx .
+docker run -p 3333:3333 rentx
+docker ps
+docker exec -it "nome do container" /bin/bash
+ls - verifica o diretorio dentro do docker
+ctrl  + d - sai de dentro do docker 
+
+docker-compose up
+docker-compose up -d
+docker-compose up --force-recreate
+docker logs rentx -f
+
+ctrl 
+
+/* docker ps, docker ps -a, */
+docker-compose stop
+docker-compose start 
+docker-compose down
+
+docker compose u --force-recreate
+docker logs rentx -f 
+
+/* IDENTIFICA O IP 
+
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rentx //
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' database_ignite //
+
+docker exec database_ignite cat /etc/hosts
+
+#############################################################
+
+CSV PARSE - FAZ LEITURA DA PLANILHA
+E ESCOLHER COMO PARSE  o csv para fazer o importe
+yarn add multer
+yarn add @types/multer -D
+yarn add csv-parse
+yarn add @types/multer-s3
+
+##########################################
+
+DESCRITIVO DO NESCESSITA INSTALAR SWAGGER
+
+yarn add swagger-ui-express
+yarn add @types/swagger-ui-express
+ir no tsconfig.json -> "resolveJsonModule": true;
+
+############################################
+ORM PARA SQL
+
+** NÃO UTILIZA
+yarn add typeorm reflect-metadata
+yarn add typeorm-naming-strategies
+yarn add typeorm-naming-strategies
+
+UTILIZA -> yarn add typeorm@0.2.45
+yarn add pg
+
+DESABILITAR no tsconfig.json
+"experimentalDecorators": true,                
+"emitDecoratorMetadata": true,  
+
+** CRIAR UMA MIGRATION
+/* "typeorm": "ts-node-dev ./node_modules/typeorm/cli"*/ colocar na ormconfig.json
+yarn typeorm migration:create -n CreateCategories
+** CRIAR A TABELA
+yarn typeorm migration:run
+yarn typeorm migration:revert
+
+
+#################################
+yarn add tsyringe
