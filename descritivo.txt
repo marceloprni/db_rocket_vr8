@@ -29,14 +29,14 @@ ir no tsconfig.json -> "resolveJsonModule": true;
 DOCKER
 
 docker build -t rentx .
-docker run -p 3333:3333 rentx
+docker run -p 3333:3333 rentx / -p ele faz um mapeamento de redes.
 docker ps
-docker exec -it "nome do container" /bin/bash
+docker exec -it "nome do container" /bin/bash - ira acessar o container 
 ls - verifica o diretorio dentro do docker
 ctrl  + d - sai de dentro do docker 
 
 docker-compose up
-docker-compose up -d
+docker-compose up -d   
 docker-compose up --force-recreate
 docker logs rentx -f
 
@@ -46,8 +46,9 @@ ctrl
 docker-compose stop
 docker-compose start 
 docker-compose down
+docker-compose down -v --rmi local  / - remove tudo 
 
-docker compose u --force-recreate
+docker-compose up --force-recreate
 docker logs rentx -f 
 
 /* IDENTIFICA O IP 
@@ -91,7 +92,7 @@ DESABILITAR no tsconfig.json
 
 ** CRIAR UMA MIGRATION
 /* "typeorm": "ts-node-dev ./node_modules/typeorm/cli"*/ colocar na ormconfig.json
-yarn typeorm migration:create -n CreateCategories
+yarn typeorm migration:create -n CreateCategories = cria um arquivo para gerar a TABELA
 ** CRIAR A TABELA
 yarn typeorm migration:run
 yarn typeorm migration:revert
@@ -99,3 +100,18 @@ yarn typeorm migration:revert
 
 #################################
 yarn add tsyringe
+yarn typeorm
+
+#############################
+yarn add bcryptjs
+yarn add @types/bcryptjs -D
+
+
+###########################
+
+yarn add jsonwebtoken
+yarn add @types/jsonwebtoken -D
+
+###################################
+
+yarn add express-async-errors

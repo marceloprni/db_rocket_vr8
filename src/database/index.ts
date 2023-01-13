@@ -1,5 +1,8 @@
 import 'reflect-metadata';
 import { createConnection, getConnectionOptions } from 'typeorm';
+//import { createConnection } from 'typeorm';
+//createConnection();
+
 
 interface IOptions {
   host: string;
@@ -13,8 +16,3 @@ getConnectionOptions().then(options => {
   });
 });
 
-/*
-import { createConnection } from 'typeorm';
-
-createConnection();
-*/
